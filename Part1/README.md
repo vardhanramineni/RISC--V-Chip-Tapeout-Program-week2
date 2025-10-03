@@ -1,4 +1,4 @@
-##BabySoC 
+## BabySoC 
 - Open-source System on Chip (SoC) based on RVMYTH, a RISC-V-based processor core.
 -  The SoC integrates a Phase-Locked Loop (PLL) for precise clock generation and control, alongside a 10-bit Digital-to-Analog Converter (DAC) for interfacing with external analog systems. 
 
@@ -15,7 +15,6 @@
 - Digital Signal Processor (DSP)
 - Power Management
 - Special Features
-- 
 ### Why SoCs Are Awesome
 
 - **Space Saving**: By combining everything into one chip, SoCs help make devices smaller and more portable.
