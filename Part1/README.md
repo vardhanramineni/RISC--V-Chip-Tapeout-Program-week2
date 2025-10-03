@@ -62,3 +62,39 @@ VSDBabySoC is a compact yet highly capable System on Chip (SoC) based on the RIS
 
 
      
+
+## Relevance of BabySoC in VSD India RISC-V Chip Tapeout Program
+
+
+
+## How BabySoC is Useful
+
+1. **Hands-on RISC-V Experience**  
+   - BabySoC is based on **RVMYTH**, a lightweight RISC-V CPU core.  
+   - Students gain real design and verification exposure with an open-source processor, aligning perfectly with the tapeout program’s emphasis on RISC-V adoption in India.  
+
+2. **Complete SoC Integration Skills**  
+   - Goes beyond CPU design by teaching **SoC-level integration** with CPU, **PLL**, and **DAC**.  
+   - Reflects real-world chip design where digital and analog IPs must be integrated.  
+
+3. **Analog + Digital Bridging**  
+   - Includes a **PLL** (for stable clock generation) and a **DAC** (for digital-to-analog conversion).  
+   - Helps students understand **mixed-signal design challenges**, crucial for actual tapeouts.  
+
+4. **Sky130 Compatibility**  
+   - BabySoC is designed for **Sky130 technology**, the same open-source PDK used in the VSD tapeout program.  
+   - Work done on BabySoC can be extended directly to real silicon tapeouts.  
+
+5. **Platform for Experimentation & Research**  
+   - Modular design makes BabySoC suitable for testing **open-source IP cores**, validating RISC-V extensions, and experimenting with digital-to-analog interfacing.  
+   - Encourages **tapeout-ready projects** and innovation.  
+
+6. **Educational Impact**  
+   - Provides a clear path from **RTL design → verification → synthesis → SoC integration → tapeout**.  
+   - Bridges the gap between **academic learning and real-world chip fabrication**.  
+
+---
+
+**In summary:** BabySoC acts as a **miniature SoC test platform**, giving practical exposure to RISC-V, SoC integration, and Sky130 flows—all of which form the foundation of the **VSD India RISC-V Chip Tapeout Program**.
+
+
