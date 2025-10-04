@@ -1,5 +1,17 @@
 
+## BabySoc
 
+- **Processor (RVMYTH):** The brain, executes instructions.
+
+- **PLL:** Generates stable, fast clock.
+
+- **DAC:** Converts digital signals to analog.
+
+- **GPIO:** Connects to external devices.
+
+- **Memory:** Stores code and data.
+
+- **Bus/Interconnect:** Connects everything togethe
 
 ## Project Structure
 
