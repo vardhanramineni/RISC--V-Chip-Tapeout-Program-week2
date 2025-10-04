@@ -134,3 +134,5 @@ Currently, the instructions in the CPU are hardcoded. In the future, I plan to d
 
 
 ## Resources
+
+[BabySoc Manili](https://github.com/manili/VSDBabySoC)
