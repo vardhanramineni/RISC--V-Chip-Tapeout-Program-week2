@@ -11,7 +11,7 @@
 
 - **Memory:** Stores code and data.
 
-- **Bus/Interconnect:** Connects everything togethe
+- **Bus/Interconnect:** Connects everything together
 
 ## Project Structure
 
