@@ -100,7 +100,7 @@ $ gtkwave output/pre_synth_sim/pre_synth_sim.vcd
 | 10 | `BNE r11, r9, -4`   | Loop until r11=1        |
 | 11 | `SUB r17, r17, r11` | Final adjust            |
 | 12 | `BEQ r0, r0, ...`   | Infinite loop           |
-       |
+
 
 ---
 
