@@ -35,8 +35,8 @@ VSDBabySoC/
 ###  Cloning the Project
 
 ```bash
-cd ~
-git clone https://github.com/manili/VSDBabySoC.git
+$ cd ~
+$ git clone https://github.com/manili/VSDBabySoC.git
 ```
 
 
