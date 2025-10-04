@@ -42,43 +42,31 @@ $ pip install pyyaml click sandpiper-saas
 $ sandpiper-saas -i ./src/module/*.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
 ```
 
-✅ Now you’ll have `rvmyth.v` alongside your other Verilog files.
-
 ---
 
-## 🧪 Simulation Flow
+##  Simulation Flow
 
 
 
-### 🔹 Pre-Synthesis Simulation
+###  Pre-Synthesis Simulation
 
 ```bash
-mkdir -p output/pre_synth_sim
-
-iverilog -o output/pre_synth_sim/pre_synth_sim.out \
+$ mkdir -p output/pre_synth_sim
+$ iverilog -o output/pre_synth_sim/pre_synth_sim.out \
   -DPRE_SYNTH_SIM \
   -I src/include -I src/module \
   src/module/testbench.v
-
-cd output/pre_synth_sim
+$ cd output/pre_synth_sim
 ./pre_synth_sim.out
 ```
 
-📊 View in GTKWave:
+### View in GTKWave:
 
 ```bash
-gtkwave output/pre_synth_sim/pre_synth_sim.vcd
+$ gtkwave output/pre_synth_sim/pre_synth_sim.vcd
 ```
 
-### 🔍 Signals to Observe
-
-* ⏱️ **CLK** → Input clock (from PLL)
-* 🔄 **reset** → Reset signal
-* 🎚 **OUT (DAC)** → Output from DAC (appears digital in sim)
-* 🔢 **RV_TO_DAC[9:0]** → 10-bit RVMYTH output → DAC input
-
----
-### 🧠 The Instruction Program Driving BabySoC  
+###  The Instruction Program Driving BabySoC  
 
 1. Increment counters,
 2. Accumulate values into `r17`,
@@ -100,22 +88,12 @@ gtkwave output/pre_synth_sim/pre_synth_sim.vcd
 | 10 | `BNE r11, r9, -4`   | Loop until r11=1        |
 | 11 | `SUB r17, r17, r11` | Final adjust            |
 | 12 | `BEQ r0, r0, ...`   | Infinite loop           |
+       |
 
 ---
 
-## 🔄 Execution Timeline
-
-| Phase                   | Registers  | r17 Value          | Behavior           |
-| ----------------------- | ---------- | ------------------ | ------------------ |
-| **Ramp (Loop1)**        | r11 = 0→42 | r17 = Σ0..42 = 903 | Monotonic increase |
-| **Peak**                | r11 = 43   | r17 = 946          | Transient maximum  |
-| **Oscillation (Loop2)** | r11 = 43→1 | r17 = 903 ± r11    | Oscillating decay  |
-| **Final**               | r11 = 1    | r17 adjusted       | Holds steady       |
-
----
-
-**Data Flow:**
-Instruction Memory → CPU Pipeline → Register r17 → DAC → Analog OUT
+### Data Flow:
+**Instruction Memory → CPU Pipeline → Register r17 → DAC → Analog OUT**
 
 ---
 
@@ -124,52 +102,19 @@ Instruction Memory → CPU Pipeline → Register r17 → DAC → Analog OUT
 
 
 
-## 📈 Pre_synth_sim Waveform
+## Pre_synth_sim Waveform
 
 ![Waveform](Images/Task2_Ravi_pre_synth_simualtion_final.png)
 
 
 
-### ⚖️ Numerics for DAC Conversion
-
-#### Scaling:
-$$
-V_{OUT} = \frac{r_{17}}{1023} \times V_{REF\_SPAN} \quad (\text{with } V_{REF\_SPAN} = 1.0\ \text{V})
-$$
-
-#### For **r17 = 903**:
-$$
-V_{OUT} = \frac{903}{1023} \times 1.0 = 0.88221\ \text{V}
-$$
-
-#### For the peak **r17 = 946**:
-$$
-V_{OUT} = \frac{946}{1023} \times 1.0 = 0.92502\ \text{V}
-$$
-
-#### 📊 Example Output Values (VREF = 1.0 V)
-
-| r17 Value | DAC Output Voltage |
-|-----------|------------------|
-| 903       | 0.882 V          |
-| 946 (peak)| 0.925 V          |
 
 
 
 
 
 
-👉 Switch `OUT` format → **Analog Step** in GTKWave for DAC output visualization.
 
----
-
-## 🛠️ Troubleshooting
-
-* ⚠️ **Module Redefinition** → Ensure files are included only once.
-* 🛤 **Path Issues** → Use absolute paths if relative ones fail.
-* ⏱️ **Waveform Mismatch** → Verify proper GTKWave format selection.
-
----
 
 ### 🚀 Future Work
 
