@@ -114,10 +114,7 @@ $ gtkwave output/pre_synth_sim/pre_synth_sim.vcd
 
 
 
-## Pre_synth_sim Waveform
-
-![Waveform](Images/Task2_Ravi_pre_synth_simualtion_final.png)
-
+![Alt](Image/BabySoc.png)
 
 
 ## Resources
